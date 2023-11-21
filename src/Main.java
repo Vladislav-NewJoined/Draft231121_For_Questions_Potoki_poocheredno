@@ -15,20 +15,20 @@ public class Main {
         t1.start();
         service1.shutdown();
 
-//        ExecutorService service2 = Executors.newFixedThreadPool(1);
-//        Thread t2 = new Thread(new MyThread2());
-//        t2.start();
-//        service2.shutdown();
-//
-//        ExecutorService service3 = Executors.newFixedThreadPool(1);
-//        Thread t3 = new Thread(new MyThread3());
-//        t3.start();
-//        service3.shutdown();
-//
-//        ExecutorService service4 = Executors.newFixedThreadPool(1);
-//        Thread t4 = new Thread(new MyThread4());
-//        t4.start();
-//        service4.shutdown();
+        ExecutorService service2 = Executors.newFixedThreadPool(1);
+        Thread t2 = new Thread(new MyThread2());
+        t2.start();
+        service2.shutdown();
+
+        ExecutorService service3 = Executors.newFixedThreadPool(1);
+        Thread t3 = new Thread(new MyThread3());
+        t3.start();
+        service3.shutdown();
+
+        ExecutorService service4 = Executors.newFixedThreadPool(1);
+        Thread t4 = new Thread(new MyThread4());
+        t4.start();
+        service4.shutdown();
 
     }
 
@@ -57,7 +57,7 @@ public class Main {
         public void run() {
             synchronized (strings) {
                 System.out.println("2. Переопределить run() метод. Создать цикл for. В цикле распечатать значения " +
-                        "от 0 до 100 делящиеся на 10 без остатка:");
+                        "\nот 0 до 100 делящиеся на 10 без остатка:");
 
                 for (int i = 0; i <= 100; i++) {
                     try {
@@ -80,15 +80,16 @@ public class Main {
         public void run() {
             synchronized (strings) {
                 System.out.println("3. Использовать статический метод Thread.sleep(), чтобы сделать паузу." +
-                        "\nРеализовано путём создания паузы 1000 миллисекунд между выводом на печать значений счетчика 1 и 2:");
+                        "\nРеализовано путём создания паузы 1500 миллисекунд между выводом на печать " +
+                        "\nзначений счетчика '1' и '2':");
 
                 for (int i = 0; i < 2; i++) {
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(1500);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println("Count valuable: " + (i + 1));
+                    System.out.println("Counter value: " + (i + 1));
                 }
                 System.out.println();
             }
@@ -108,7 +109,7 @@ public class Main {
                 }
 
                 System.out.println("4. Создать три потока, выполняющих задачу распечатки значений." +
-                        "\nРеализовано На примере вывода уведомлений о старте и финише трёх потоков:");
+                        "\nРеализовано на примере вывода уведомлений о старте и финише трёх потоков:");
                 try {
                     Thread.sleep(400);
                 } catch (InterruptedException e) {
