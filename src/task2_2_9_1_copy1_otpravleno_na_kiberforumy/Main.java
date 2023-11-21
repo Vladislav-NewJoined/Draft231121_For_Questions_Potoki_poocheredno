@@ -1,3 +1,5 @@
+package task2_2_9_1_copy1_otpravleno_na_kiberforumy;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -79,9 +81,10 @@ public class Main {
         @Override
         public void run() {
             synchronized (strings) {
-                System.out.println("3. Использовать статический метод Thread.sleep(), чтобы сделать паузу." +
-                        "\nРеализовано путём создания паузы 1500 миллисекунд между выводом на печать " +
-                        "\nзначений счетчика '1' и '2':");
+                System.out.println("""
+                        3. Использовать статический метод Thread.sleep(), чтобы сделать паузу.
+                        Реализовано путём создания паузы 1500 миллисекунд между выводом на печать\s
+                        значений счетчика '1' и '2':""");
 
                 for (int i = 0; i < 2; i++) {
                     try {
