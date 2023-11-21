@@ -119,7 +119,6 @@ class D implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
         }
         System.exit(0);
             }
